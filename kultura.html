@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Website Header</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://use.typekit.net/sya4jbl.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">Sophitia Datu</div>
+    <nav>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="../index.html" class="nav-link active-link">Portfolio</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Main Layout -->
+  <div class="container">
+    <!-- Left Content (Image only) -->
+    <div class="left-content">
+      <img src="maskarra.png" alt="maskarra Image" class="media-image">
+    </div>
+
+    <!-- Right Sidebar (Sticky) -->
+    <div class="right-sidebar">
+      <!-- Back Button -->
+      <button class="back-btn" onclick="window.location.href='../index.html';">
+        <img src="backarrow.png" alt="Back" />
+      </button>
+
+      <h2>Kultura/EN Barong: Islas Filipinas Collection</h2>
+      <p>
+        Inspired by Philippine festivals, each barong showcases how traditional craftsmanship can capture the essence of cultural celebration in modern, wearable art. 
+        The challenge was to use a straightforward visual approach that distinguishes five different festivals—Masskara, Ati-Atihan, Moriones, Higantes, and Panagbenga—at 
+        a single glance. Local indigenous textiles, intricate patterns, and bold colors from each festival were incorporated, with iconic symbols positioned as strong focal points.
+      </p>
+
+      <!-- Technical Execution Accordion -->
+      <div class="accordion">
+        <div class="accordion-header">
+          <span>Technical Execution</span>
+          <button class="accordion-toggle arrowbtn"></button>
+        </div>
+
+      <div class="accordion-content">
+        <ul>
+          <li>Conceptualized five design studies for different Philippine festivals</li>
+          <li>Created initial concept sketches representing each festival</li>
+          <li>Rendered and polished the final sketches with Adobe Illustrator</li>
+          <li>Presented palette studies</li>
+        </ul>
+      </div>
+
+      <!-- Tools & Role Row -->
+      <div class="tools-roles">
+        <div class="tools">
+          <h3>Tools</h3>
+          <ul>
+            <li>Adobe Illustrator</li>
+            <li>Adobe Photoshop</li>
+          </ul>
+        </div>
+        <div class="role">
+          <h3>Role</h3>
+          <ul>
+            <li>Graphic Designer</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Festival Section -->
+      <div class="festival-section">
+        <h3>Festivals</h3>
+        <div class="festival-buttons">
+          <a href="kultura.html" class="festival-btn maskarra active">
+            <img src="icons/icons_masskara.png" alt="Maskarra Icon">
+            Maskarra
+          </a>
+          <a href="atiatihan/ati-atihan.html" class="festival-btn ati-atihan">
+            <img src="icons/icons_atiatihan.png" alt="Ati-Atihan Icon">
+            Ati-Atihan
+          </a>
+          <a href="moriones/moriones.html" class="festival-btn moriones">
+            <img src="icons/icons_moriones.png" alt="Moriones Icon">
+            Moriones
+          </a>
+          <a href="panagbenga/panagbenga.html" class="festival-btn penagbenga">
+            <img src="icons/icons_penagbenga.png" alt="Penagbenga Icon">
+            Panagbenga
+          </a>
+          <a href="higantes/higantes.html" class="festival-btn higantes">
+            <img src="icons/icons_higantes.png" alt="Higantes Icon">
+            Higantes
+          </a>
+          <a href="all/all.html" class="festival-btn all">
+            <img src="icons/icons_all.png" alt="All Icon">
+            All
+          </a>
+        </div>
+      </div>
+
+    </div> <!-- end right-sidebar -->
+  </div> <!-- end container -->
+
+  <!-- JS for Accordion -->
+  <script>
+    document.querySelectorAll(".accordion-toggle").forEach(button => {
+    button.addEventListener("click", () => {
+    const content = button.closest(".accordion").querySelector(".accordion-content");
+    const isOpen = content.style.display === "block";
+    content.style.display = isOpen ? "none" : "block";
+    // Toggle arrow rotation
+    button.classList.toggle("open", !isOpen);
+    });
+  });
+  </script>
+
+</body>
+</html>
