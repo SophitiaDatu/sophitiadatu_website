@@ -1,0 +1,299 @@
+body {
+  margin: 0;
+  font-family: "mundial-narrow-variable", sans-serif;
+  font-variation-settings: "wght" 100;
+  background-color: #F3F3E8;
+}
+
+/* Header */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 180px 3px 180px;
+  background-color: #F3F3E8;
+  border-bottom: .5px solid #333;
+}
+
+.logo {
+  font-size: 30px;
+  font-family: "museo-sans-rounded", sans-serif;
+  font-weight: 700;
+  color: #333;
+}
+
+nav a.nav-link {
+  padding: 10px 30px;
+  text-decoration: none;
+  color: #333;
+  margin: 0 8px;
+}
+
+/* Active link */
+nav a.active-link {
+  background-color: #F3F3E8;
+  border: 1px solid #333;
+  border-bottom: none;
+}
+
+/* Main Layout */
+.container {
+  display: flex;
+  padding: 2rem 180px;
+  gap: 2rem;
+}
+
+/* Left content area */
+.left-content {
+  width: 66.66%;
+}
+
+.left-content img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+/* Right sidebar */
+.right-sidebar {
+  width: 33.33%;
+  position: sticky;
+  top: 80px;
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Back button */
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;          
+  height: 30px;
+  padding: 0;
+  margin: 0 0 1rem 0;  
+  border: 0px solid #333; 
+  border-radius: 50%;     
+  background-color: #BBD9FF; 
+  cursor: pointer;
+  box-sizing: border-box; 
+}
+
+.back-btn img {
+  width: 50%;           
+  height: auto;
+  display: block;
+}
+
+.back-btn:hover {
+  background-color: #a4c8ff;
+}
+
+/* Sidebar content */
+.right-sidebar h2 {
+  margin: 0 0 0.3rem 0; 
+  color: #0074d9;
+  font-size: 1.4rem;
+  line-height: 1.2;     
+}
+
+.right-sidebar p {
+  background: none;     
+  border: none;   
+  margin: 0 0 0.25rem 0;          
+  line-height: 1.5;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+/* Accordion */
+.accordion-header {
+  display: flex;
+  align-items: center;   
+  font-size: 1rem;
+  margin: 0;
+}
+
+.arrowbtn {
+  position: relative;
+  width: 20px;     
+  height: 20px;
+  cursor: pointer;
+  display: inline-block;
+  margin-left: 8px; 
+  background: none;
+  border: none;
+  padding: 0;
+  transition: transform 0.25s ease-in-out;
+}
+
+.arrowbtn::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  border-right: 2px solid #333;
+  border-bottom: 2px solid #333;
+}
+
+.arrowbtn.open::after {
+  transform: translate(-50%, -50%) rotate(-135deg);
+}
+
+.accordion-header {
+  margin-top: .5rem;  
+  display: flex;
+  align-items: center;
+  gap: 6px; 
+  cursor: pointer;
+}
+
+.accordion-content {
+  display: none;
+  font-size: 0.7rem;
+  line-height: 2;
+  margin-top: .5rem;          
+  padding-left: 0;    
+}
+
+.accordion-content ul {
+  margin: 0;
+  padding-left: 1rem; 
+}
+
+/* Tools & Roles */
+.tools-roles {
+  display: flex;
+  justify-content: space-between;
+  gap: 0rem;
+  margin-top: 2rem; 
+  margin-bottom: 3rem; 
+}
+
+.tools, .role {
+  flex: 1;
+  padding: 0rem;
+}
+
+.tools ul, .role ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tools li, .role li {
+  font-size: 0.7rem;
+  line-height: 1.4;
+  padding: 0rem;
+}
+
+.tools h3, .role h3 {
+  font-size: 1rem;
+  position: relative;
+  padding-left: 0.7rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.tools h3::before, .role h3::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.2em;
+  width: 1px;
+  height: 0.8em;
+  background-color: #ccc;
+}
+
+/* Festivals */
+.festival-section {
+  margin-top: 8px;
+}
+
+.festival-section h3::before {
+  content: "";
+  display: block;
+  width: 27rem;         
+  height: .75px;        
+  background-color: #ccc;; 
+  margin-bottom: 2.5rem;  
+}
+
+.festival-section h3 {
+  font-size: 1rem;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.festival-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.festival-buttons a {
+  background-color: #F3F3E8;
+  border: .5px solid #333;
+  border-radius: 8px;
+  padding: 14px 10px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  text-decoration: none;
+}
+
+.festival-buttons img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.festival-btn.maskarra.active {
+  background-color: #2e4980;
+  color: #fff;
+  border: 0;
+}
+
+.festival-buttons a:hover {
+  color: #fff;
+}
+
+.festival-buttons a.penagbenga:hover { 
+  background-color: #5ab08f; 
+  border: 0;
+
+}
+.festival-buttons a.moriones:hover { 
+  background-color: #f9c7c4; 
+  border: 0;
+
+}
+.festival-buttons a.higantes:hover { 
+  background-color: #f9c7c4; 
+  border: 0;
+
+}
+.festival-buttons a.ati-atihan:hover { 
+  background-color: #d69e30; 
+  border: 0;
+
+}
+.festival-buttons a.all:hover { 
+  background-color: #37141e; 
+  border: 0;
+
+}
