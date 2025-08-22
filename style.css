@@ -1,0 +1,313 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "mundial-narrow-variable", sans-serif;
+  font-variation-settings: "wght" 100;
+  background-color: #F3F3E8;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 22px;
+  padding-right: 180px;
+  padding-bottom: 3px;
+  padding-left: 180px;
+  background-color:#F3F3E8;
+  border-bottom: .5px solid #333;
+}
+
+.logo {
+  font-size: 30px;
+  font-family: "museo-sans-rounded", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  color: #333;
+}
+
+nav a.nav-link {
+  padding: 10px 30px;
+  text-decoration: none;
+  color: #333;
+  margin: 0 8px;
+  font-family: "mundial-narrow-variable", sans-serif;
+  font-variation-settings: "wght" 100;
+  background-color: transparent;
+  border: none; /* Remove borders for all by default */
+}
+
+/* Style for active link (Portfolio only) */
+nav a.active-link {
+  background-color: #F3F3E8;
+  border: 1px solid #333;
+  border-bottom: none;
+}
+
+.projects-header {
+  position: sticky;
+  top: 50px; /* adjust depending on your header height */
+  z-index: 998;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 180px 40px;
+  background-color: #F3F3E8; /* same as your site background */
+}
+
+.projects-header h3 {
+  margin: 0;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.filters button {
+  width: 150px;           /* equal fixed width */
+  padding: 4px;         /* vertical padding only */
+  background-color: transparent; /* no fill */
+  border: .5px solid #808080;     /* outline in blue */
+  border-radius: 28px;
+  cursor: pointer;
+  font-size: 15px;
+  font-family: "mundial-narrow-variable", sans-serif;
+  font-variation-settings: "wght" 100;
+  font-weight: normal; /* fallback */
+  color: #000000;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.filters button:hover {
+  background-color: #BBD9FF; /* fill on hover */
+  border: .5px solid #BBD9FF;     /* outline in blue */
+  color: #F3F3E8;
+}
+
+.filters button.active {
+  background-color: #BBD9FF;
+  color: #fff;
+  border-color: #BBD9FF;
+}
+
+.video-section {
+  position: relative;
+  width: 100%;
+  height: 68vh;
+  overflow: hidden;
+}
+
+
+.background-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  /* Gradient mask from bottom to top */
+  -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 1) 50%);
+  mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 1) 50%);
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  mask-repeat: no-repeat;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to top,
+    rgba(243, 243, 232, 0.95) 0%,     /* Very opaque at bottom */
+    rgba(243, 243, 232, 0.85) 20%,    /* Still quite opaque */
+    rgba(243, 243, 232, 0.7) 40%,     /* Smoother transition */
+    rgba(243, 243, 232, 0.5) 60%,     /* Midway fade */
+    rgba(243, 243, 232, 0.2) 80%,     /* Nearly transparent */
+    rgba(243, 243, 232, 0) 100%       /* Fully transparent at top */
+  );
+  z-index: 1;
+}
+
+.see-works-container {
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 20px; /* space between See, button, and Works */
+  font-family: "mundial-narrow-variable", sans-serif;
+  font-variation-settings: "wght" 100;
+  color: #333;
+  font-size: 12px;
+}
+
+.see-text,
+.works-text {
+  text-transform: uppercase;
+  user-select: none;
+}
+
+.circle-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: .5px solid #333;
+  border-radius: 50%;
+  background-color: transparent;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.circle-button img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.circle-button:hover {
+  background-color: #BBD9FF;
+  border: #BBD9FF;
+}
+
+.circle-button:hover img {
+  filter: brightness(0) invert(1); /* makes dark PNG white on hover */
+  transform: scale(1.1);
+}
+
+.project-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin: 50px 180px;
+}
+
+.project-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.project-item a {
+  display: block;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.project-item img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  display: block;
+  border-radius: 12px;
+}
+
+.project-item a:hover img {
+  transform: scale(1.05);
+}
+
+.project-label {
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+  font-family: "mundial-narrow-variable", sans-serif;
+  font-variation-settings: "wght" 100;
+  font-size: 14px;
+  color: #333;
+}
+
+.project-label img {
+  width: 10px;
+  height: 10px;
+  margin-right: 6px;
+}
+
+.appreciation {
+  font-size: 17px;
+  padding: 10px 300px 50px;
+}
+
+.email {
+  font-size: 14px;
+  padding: 8px 300px 40px;
+  text-align: center;
+}
+
+
+hr {
+  align-items: center;
+  border: .05px;
+  background-color: #333;
+  height: .5px;
+  width: 1000px;
+  margin: 50px 140;
+
+}
+
+.site-footer {
+  background-color: #F3F3E8;
+  color:  #333;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-family: "mundial-narrow-variable", sans-serif;
+  font-variation-settings: "wght" 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;       /* Center horizontally */
+  justify-content: center;   /* Center vertically */
+  text-align: center;
+}
+
+.footer-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #333;
+  text-decoration: none;
+  font-weight: 300;
+  transition: color 0.3s ease;
+}
+
+.footer-links a img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  transition: all 0.3s ease;
+}
+
+/* Icon swap on hover */
+.footer-links a:nth-child(1):hover img {
+  content: url("icons/behance-blue.png");
+}
+
+.footer-links a:nth-child(2):hover img {
+  content: url("icons/gmail-blue.png");
+}
+
+.footer-links a:nth-child(3):hover img {
+  content: url("icons/linkedin-blue.png");
+}
+
+.footer-links a:nth-child(4):hover img {
+  content: url("icons/instagram-blue.png");
+}
+
+.footer-links a:hover {
+  color: #007BFF;
+}
+
+.site-footer p {
+  font-size: 12px;
